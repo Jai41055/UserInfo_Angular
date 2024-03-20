@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 50px 200px;
+}
+
+.main {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.field {
+  display: flex;
+  width: 40%;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.button {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+button {
+  padding: 5px;
+}
+
+label {
+  font-size: 18px;
+}
+
+input {
+  padding: 3px;
+}
+
+.error {
+  color: red;
+  display: block;
+}

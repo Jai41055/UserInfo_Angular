@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="main">
+    <h3>Edit Employee</h3>
+  </div>
+  <div>
+    <form [formGroup]="myForm" (ngSubmit)="saveForm()">
+      <div class="field">
+        <label for="number">Employee Number</label>
+        <div>
+          <input
+            type="text"
+            placeholder="Number"
+            formControlName="employeeNumber"
+          />
+        </div>
+      </div>
+      <div class="field">
+        <label for="name">UserName</label>
+        <div>
+          <input
+            type="text"
+            placeholder="User Name"
+            formControlName="employeeName"
+          />
+          <span class="error" *ngIf="name.touched && name.status == 'INVALID'"
+            >Please enter valid Name</span
+          >
+        </div>
+      </div>
+      <div class="field">
+        <label for="mobile">Mobile</label>
+        <div>
+          <input
+            type="text"
+            placeholder="Mobile"
+            formControlName="mobileNumber"
+          />
+          <span class="error" *ngIf="phone.touched && phone.status == 'INVALID'"
+            >Maximum 10 digits</span
+          >
+        </div>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <div>
+          <input
+            type="email"
+            placeholder="User Email"
+            formControlName="emailId"
+          />
+          <span class="error" *ngIf="email.touched && email.status == 'INVALID'"
+            >Please enter valid Email</span
+          >
+        </div>
+      </div>
+      <div class="button">
+        <button routerLink="/list">Back</button>
+        <button [disabled]="!myForm.valid">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

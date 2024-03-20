@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="main">
+    <h3>Employee List</h3>
+    <button routerLink="/add">Add Employee</button>
+  </div>
+  <div class="table">
+    <table>
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Number</th>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>
+            <a href="" routerLink="/detail/{{ user.id }}">{{
+              user.employeeNumber
+            }}</a>
+          </td>
+          <td>{{ user.employeeName }}</td>
+          <td>{{ user.mobileNumber }}</td>
+          <td>{{ user.emailId }}</td>
+          <td>
+            <div class="actions">
+              <button routerLink="/edit/{{ user.id }}">Edit</button>
+              <button (click)="deleteEmployee(user.id)">Delete</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
